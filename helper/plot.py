@@ -55,8 +55,8 @@ def heatmap(values, xlabel, ylabel, xticklabels, yticklabels, cmap=None,
     ax.set_ylabel(ylabel)
     ax.set_xticks(np.arange(len(xticklabels)) + .5)
     ax.set_yticks(np.arange(len(yticklabels)) + .5)
-    ax.set_xticklabels(xticklabels)
-    ax.set_yticklabels(yticklabels)
+    ax.set_xticklabels(xticklabels, fontsize=text_size)
+    ax.set_yticklabels(yticklabels, fontsize=text_size)
     ax.set_aspect(1)
 
     for p, color, value in zip(img.get_paths(), img.get_facecolors(),
