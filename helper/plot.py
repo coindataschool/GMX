@@ -29,22 +29,6 @@ def human_format_dollar_or_num(dollar=False, decimals=0):
     return human_format
 
 
-def plot_timeseries_with_trendline(ytru, yhat, title, ylabel, 
-                                   ytru_legend, yhat_legend):
-    """Plot timeseries data and model predictions over time. 
-    
-    Arguments:
-    ytru -- a pandas series, observed outcome 
-    yhat -- a pandas series, predicted outcome
-    title -- string, figure title
-    ylabel -- string, y-axis label
-    ytru_legend -- string, legend label for observed outcome
-    yhat_legend -- string, legend label for predicted outcome
-    """
-    ax = ytru.plot(**plot_params, title=title, ylabel=ylabel, label=ytru_legend)
-    ax = yhat.plot(ax=ax, linewidth=2, label=yhat_legend, color='C0')
-    return ax
-
 def heatmap(values, xlabel, ylabel, xticklabels, yticklabels, cmap=None,
             vmin=None, vmax=None, ax=None, fmt="%0.2f", text_size=10):    
     if ax is None:
@@ -69,3 +53,56 @@ def heatmap(values, xlabel, ylabel, xticklabels, yticklabels, cmap=None,
         ax.text(x, y, fmt % value, color=c, ha="center", va="center", 
                 fontsize=text_size)
     return img
+
+
+def plot_timeseries_with_trendline(ytru, yhat, title=None, xlabel=None, 
+                                   ylabel=None, ytru_legend=None, 
+                                   yhat_legend=None):
+    """Plot timeseries data and linear trend forecast.
+    Although this function also works for forecast obtained using any method 
+    (not limited to linear trend), it's designed primarily for plotting a 
+    timeseries with a trend line to gain quick understandings about the data.
+
+    Arguments:
+    ytru -- a pandas series, observed outcome 
+    yhat -- a pandas series, predicted outcome
+    title -- string, figure title
+    xlabel -- string, x-axis label
+    ylabel -- string, y-axis label
+    ytru_legend -- string, legend label for observed outcome
+    yhat_legend -- string, legend label for predicted outcome
+    """
+    if xlabel is None:
+        xlabel = ytru.index.name
+    if ylabel is None:
+        ylabel = ytru.name
+    if ytru_legend is None:
+        ytru_legend = ytru.name
+
+    ax = ytru.plot(**plot_params, label=ytru_legend)
+    ax = yhat.plot(ax=ax, linewidth=2, label=yhat_legend, color='C0')
+    ax.set(title=title, xlabel=xlabel, ylabel=ylabel)
+    ax.legend()
+    return ax
+
+
+def plot_pred_singlestep(ytru, yhat_train, yhat_test, 
+                         title=None, xlabel=None, ylabel=None, 
+                         ytru_legend=None):
+    """Plot timeseries data and 1-step forecasts made on training and testing sets.
+    """
+    if xlabel is None:
+        xlabel = ytru.index.name
+    if ylabel is None:
+        ylabel = ytru.name
+    if ytru_legend is None:
+        ytru_legend = ytru.name
+        
+    ax = ytru.plot(**plot_params, alpha=0.5, label=ytru_legend)
+    ax = yhat_train.plot(ax=ax, linewidth=2, label="(Training) Forecast", color='C0')
+    ax = yhat_test.plot(ax=ax, linewidth=2, label="(Testing) Forecast", color='C3')
+    ax.set(title=title, xlabel=xlabel, ylabel=ylabel)
+    ax.legend()
+    return ax
+
+
