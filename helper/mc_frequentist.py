@@ -43,8 +43,3 @@ def mc_frequentist(xs, n_fut=120, n_iter=1000, random_seed=42, show_plot=True):
         for i in range(1, n_iter+1)})
     
     return df_fut
-
-
-# # change to long format
-# fut_vals = df_fut.stack()
-# fut_vals.name = xs.name
