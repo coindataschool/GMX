@@ -5,7 +5,7 @@ basket of high grade digital assets that serves as the platform's liquidity
 pool. This repo contains data analysis scripts for the following articles I 
 wrote in order to understand GMX's business and GLP's returns and risks.
 
-#### Articles:
+Articles:
 
 * [GMX Revenue Growth](https://coindataschool.substack.com/p/gmx-revenue-growth?r=1ly8yy&s=w&utm_campaign=post&utm_medium=web)
 * [GMX Revenue Breakdown](https://coindataschool.substack.com/p/gmx-revenue-breakdown?r=1ly8yy&s=w&utm_campaign=post&utm_medium=web)
@@ -17,7 +17,7 @@ this address: `0x783c5546C863f65481BD05Fd0e3FD5f26724604E`. Your support will
 help me continuously bring you actionable insights and educational content. 
 Much appreciated!
 
-### Platform Sites
+Platform Sites:
 
 * [GMX Website](https://gmx.io/)
 * [GMX Documentation](https://gmxio.gitbook.io/)
