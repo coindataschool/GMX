@@ -1,9 +1,9 @@
 # GMX-GLP
 
 GMX is a decentralized trading platform on Arbitrum and Avalanche. GLP is a 
-basket of high grade digital assets that serves as the platform's liquidity 
-pool. This repo contains data analysis scripts for the following articles I 
-wrote in order to understand GMX's business and GLP's returns and risks.
+basket of crypto assets that serves as the platform's liquidity pool. This repo 
+contains data analysis scripts for the following articles I wrote in order to 
+understand GMX's business and GLP's returns and risks.
 
 Articles:
 
