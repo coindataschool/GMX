@@ -24,6 +24,6 @@ Platform Sites:
 * Data were downloaded from the [stats site](https://stats.gmx.io) published
 and maintained by the team.
 
-## DISCLAIMER
+### DISCLAIMER
 
 *All information published in this newsletter and across all communication channels of coin data school, including any data, dashboards, analyses, results, predictions, forecasts, code, ideas, opinions, views, or commentaries, are for informational and educational purposes only and should not be construed as investment advice. The information provided may include errors. While I try my best to analyze the data and present the results accurately, I can and do make mistakes. I will not and cannot be held liable for any actions you take as a result of anything you read here.*
