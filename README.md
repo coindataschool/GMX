@@ -12,7 +12,7 @@ wrote in order to understand GMX's business and GLP's returns and risks.
 * [GLP Net Dollar Flow](https://coindataschool.substack.com/p/glp-net-dollar-flow?r=1ly8yy&s=w&utm_campaign=post&utm_medium=web)
 
 If you find these articles and scripts useful and would like to buy me a meal,
-you can do so by sending ETH, WBTC, AVAX, BNB, USDC, or USDT to this address:
+you can do so by sending `ETH`, `WBTC`, `AVAX`, `BNB`, `USDC`, or `USDT` to this address:
 0x783c5546C863f65481BD05Fd0e3FD5f26724604E.
 
 Your support will help me continuously bring you actionable insights and 
