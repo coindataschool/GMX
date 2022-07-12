@@ -10,6 +10,7 @@ Articles:
 * [GMX Revenue Growth](https://coindataschool.substack.com/p/gmx-revenue-growth?r=1ly8yy&s=w&utm_campaign=post&utm_medium=web)
 * [GMX Revenue Breakdown](https://coindataschool.substack.com/p/gmx-revenue-breakdown?r=1ly8yy&s=w&utm_campaign=post&utm_medium=web)
 * [GLP Net Dollar Flow](https://coindataschool.substack.com/p/glp-net-dollar-flow?r=1ly8yy&s=w&utm_campaign=post&utm_medium=web)
+* [GLP Buy-n-Hold Returns](https://coindataschool.substack.com/p/glp-buy-and-hold-returns?r=1ly8yy&s=w&utm_campaign=post&utm_medium=web)
 
 If you find these articles and scripts useful and would like to buy me a meal,
 you can do so by sending `ETH`, `WBTC`, `AVAX`, `BNB`, `USDC`, or `USDT` to 
