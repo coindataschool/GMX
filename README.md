@@ -5,6 +5,11 @@ basket of crypto assets that serves as the platform's liquidity pool. This repo
 contains data analysis scripts for the following articles I wrote in order to 
 understand GMX's business and GLP's returns and risks.
 
+Dashboards:
+
+* [GLP Key Metrics & Strategy Backtest, Arbitrum](https://dune.com/coindataschool/glp-arbitrum)
+* [GLP Key Metrics & Strategy Backtest, Avalanche](https://dune.com/coindataschool/glp-avalanche)
+
 Articles:
 
 * [GMX Revenue Growth](https://coindataschool.substack.com/p/gmx-revenue-growth?r=1ly8yy&s=w&utm_campaign=post&utm_medium=web)
