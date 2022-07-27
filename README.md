@@ -7,8 +7,10 @@ understand GMX's business and GLP's returns and risks.
 
 Dashboards:
 
-* [GLP Key Metrics & Strategy Backtest, Arbitrum](https://dune.com/coindataschool/glp-arbitrum)
-* [GLP Key Metrics & Strategy Backtest, Avalanche](https://dune.com/coindataschool/glp-avalanche)
+* [GLP Key Metrics, Arbitrum](https://dune.com/coindataschool/glp-arbitrum)
+* [GLP Key Metrics, Avalanche](https://dune.com/coindataschool/glp-avalanche)
+* [Cost of Transactions on GMX, Arbitrum](https://dune.com/coindataschool/cost-of-transactions-on-gmx-arbitrum)
+* [Cost of Transactions on GMX, Avalanche](https://dune.com/coindataschool/cost-of-transactions-on-gmx-avalanche)
 
 Articles:
 
