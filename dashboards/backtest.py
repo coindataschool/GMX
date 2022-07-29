@@ -1,15 +1,10 @@
 import os
 import numpy as np
 import pandas as pd
-from duneanalytics import DuneAnalytics
+from duda import dune
 import streamlit as st
 from strats import bt_strat1, bt_strat2, bt_strat3, bt_strat4, bt_strat5
 import plotly.express as px
-
-# get Dune Analytics login credentials
-MY_USERNAME = os.environ.get('DUNE_USERNAME')
-MY_PASSWORD = os.environ.get('DUNE_PASSWORD')
-dune = DuneAnalytics(MY_USERNAME, MY_PASSWORD)
 
 # define helper function
 def extract_frame_from_dune_data(dune_data):    
