@@ -25,8 +25,8 @@ Articles:
 * [Open Interest on GMX](https://coindataschool.substack.com/p/open-interest-on-gmx?r=1ly8yy&s=w&utm_campaign=post&utm_medium=web)
 * [GLP Tail Risk](https://coindataschool.substack.com/p/glp-tail-risk?r=1ly8yy&s=w&utm_campaign=post&utm_medium=web)
 
-If you'd like to support my work, you can tip me `SAT` [here](https://tippin.me/@coindataschool) or
-send `ETH`, `WBTC`, `AVAX`, `BNB`, `USDC`, `USDT` to my eth wallet `0x783c5546C863f65481BD05Fd0e3FD5f26724604E`. Your support will help me continuously bring you actionable insights and useful tools. Much appreciated!
+If you'd like to support my work, you can tip me [here](https://tippin.me/@coindataschool) or
+send coins to my eth wallet `0x783c5546C863f65481BD05Fd0e3FD5f26724604E`. Your support will help me keep bringing you actionable insights and useful tools. Much appreciated!
 
 GMX Official Sites:
 
