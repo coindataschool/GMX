@@ -13,7 +13,6 @@ Dashboards:
 * [Cost of Transactions on GMX, Avalanche](https://dune.com/coindataschool/cost-of-transactions-on-gmx-avalanche)
 * [GLP Strategies Backtest and Comparison](https://coindataschool-glp-strats-comp-dashboard-main-vimp75.streamlitapp.com/)
 * [GLP & TriCrypto Beta and Excess Return](https://coindataschool-beta-sharpe-ret-dashboard-main-5rm56h.streamlitapp.com/)
-* [GLP Return Breakdown](https://coindataschool.substack.com/p/glp-return-breakdown?r=1ly8yy&s=w&utm_campaign=post&utm_medium=web)
 
 Articles:
 
@@ -25,6 +24,7 @@ Articles:
 * [Reinvest Rewards or Not?](https://coindataschool.substack.com/p/reinvest-rewards-or-not?r=1ly8yy&s=w&utm_campaign=post&utm_medium=web)
 * [Open Interest on GMX](https://coindataschool.substack.com/p/open-interest-on-gmx?r=1ly8yy&s=w&utm_campaign=post&utm_medium=web)
 * [GLP Tail Risk](https://coindataschool.substack.com/p/glp-tail-risk?r=1ly8yy&s=w&utm_campaign=post&utm_medium=web)
+* [GLP Return Breakdown](https://coindataschool.substack.com/p/glp-return-breakdown?r=1ly8yy&s=w&utm_campaign=post&utm_medium=web)
 
 If you'd like to support my work, you can tip me [here](https://tippin.me/@coindataschool) or
 send coins to my eth wallet `0x783c5546C863f65481BD05Fd0e3FD5f26724604E`. Your support will help me keep bringing you actionable insights and useful tools. Much appreciated!
