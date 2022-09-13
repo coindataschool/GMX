@@ -10,10 +10,15 @@ plot_params = dict(
 )
 
 def human_format_dollar_or_num(dollar=False, decimals=0):
-    """ Returns a function that can be used to format matplot axes large numbers human friendly. 
+    """ 
+    Return a function for formatting matplot axis numbers human friendly. 
 
-    Arguments:
-    dollar -- logical. If True, will add $ in front of the numbers.
+    Parameters
+    ----------
+    dollar: logical
+        If True, will add $ in front of the numbers.
+    decimals: int
+        Number of decimals to display.
     """
 
     base_fmt = '%.{}f%s'.format(decimals)
@@ -58,19 +63,26 @@ def heatmap(values, xlabel, ylabel, xticklabels, yticklabels, cmap=None,
 def plot_timeseries_with_trendline(ytru, yhat, title=None, xlabel=None, 
                                    ylabel=None, ytru_legend=None, 
                                    yhat_legend=None):
-    """Plot timeseries data and linear trend forecast.
+    """
+    Plot timeseries data and linear trend forecast.
     Although this function also works for forecast obtained using any method 
     (not limited to linear trend), it's designed primarily for plotting a 
     timeseries with a trend line to gain quick understandings about the data.
 
-    Arguments:
-    ytru -- a pandas series, observed outcome 
-    yhat -- a pandas series, predicted outcome
-    title -- string, figure title
-    xlabel -- string, x-axis label
-    ylabel -- string, y-axis label
-    ytru_legend -- string, legend label for observed outcome
-    yhat_legend -- string, legend label for predicted outcome
+    Parameters
+    ----------
+    ytru: Series
+        Observed outcome.
+    yhat: Series 
+        Predicted outcome.
+    title: str 
+        Figure title.
+    xlabel: str 
+    ylabel: str
+    ytru_legend: str 
+        Legend label for observed outcome.
+    yhat_legend: str 
+        Legend label for predicted outcome.
     """
     if xlabel is None:
         xlabel = ytru.index.name
@@ -89,7 +101,23 @@ def plot_timeseries_with_trendline(ytru, yhat, title=None, xlabel=None,
 def plot_pred_singlestep(ytru, yhat_train, yhat_test, 
                          title=None, xlabel=None, ylabel=None, 
                          ytru_legend=None):
-    """Plot timeseries data and 1-step forecasts made on training and testing sets.
+    """
+    Plot timeseries data and 1-step forecasts.
+
+    Parameters
+    ----------
+    ytru: Series
+        Observed outcome. 
+    yhat_train: Series 
+        Predicted outcome on training set.
+    yhat_test: Series 
+        Predicted outcome on testing set.
+    title: str 
+        Figure title.
+    xlabel: str 
+    ylabel: str
+    ytru_legend: str 
+        Legend label for observed outcome.
     """
     if xlabel is None:
         xlabel = ytru.index.name
@@ -105,4 +133,29 @@ def plot_pred_singlestep(ytru, yhat_train, yhat_test,
     ax.legend()
     return ax
 
+def plot_simple_bars(x, y, title=None, xlabel=None, ylabel=None):
+    """
+    Plot bar chart where bars below 0 are colored red and above are colored green.
 
+    Parameters
+    ----------
+    x: Series
+        Values on x-axis. 
+    y: Series 
+        Values on y-axis.
+    title: str 
+        Figure title.
+    xlabel: str 
+    ylabel: str
+    """
+    if xlabel is None:
+        xlabel = x.index.name
+    if ylabel is None:
+        ylabel = y.name
+    
+    _, ax = plt.subplots(constrained_layout=True) 
+    ax.bar(x, y, color=(y > 0).map({True:'#008000', False:'#b22222'}), edgecolor='k')
+    # ax.axhline(0, color='k', linestyle = 'dashed')
+    ax.set(title=title, xlabel=xlabel, ylabel=ylabel)
+    plt.xticks(np.arange(min(x), max(x)+1, 1))
+    return ax
