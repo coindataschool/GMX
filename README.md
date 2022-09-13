@@ -13,6 +13,7 @@ Dashboards:
 * [Cost of Transactions on GMX, Avalanche](https://dune.com/coindataschool/cost-of-transactions-on-gmx-avalanche)
 * [GLP Strategies Backtest and Comparison](https://coindataschool-glp-strats-comp-dashboard-main-vimp75.streamlitapp.com/)
 * [GLP & TriCrypto Beta and Excess Return](https://coindataschool-beta-sharpe-ret-dashboard-main-5rm56h.streamlitapp.com/)
+* [GLP Return Breakdown](https://coindataschool.substack.com/p/glp-return-breakdown?r=1ly8yy&s=w&utm_campaign=post&utm_medium=web)
 
 Articles:
 
