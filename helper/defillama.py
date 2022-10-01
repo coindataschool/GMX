@@ -1,8 +1,10 @@
 # Authors: Coin Data School <coindataschool@gmail.com>
 # License: MIT License
 import requests
-import datetime as dt
 import pandas as pd
+import numpy as np
+import datetime as dt
+from dateutil.relativedelta import relativedelta
 
 TVL_BASE_URL = "https://api.llama.fi"
 COINS_BASE_URL = "https://coins.llama.fi"
@@ -256,6 +258,63 @@ class DefiLlama:
         df = df.set_index('timestamp')
         return df 
 
+    def get_tokens_hist_prices(self, token_addrs_n_chains, start, end, type='close'):
+        """Get historical prices of tokens by contract address.
+        Uses get_tokens_hist_snapshot_prices() to download iteratively since
+        DeFiLlama currently doesn't offer an API for bulk download. 
+        
+        Parameters
+        ----------
+        token_addrs_n_chains : dictionary
+            Each key is a token address; each value is a chain where the token 
+            address resides. If getting price from coingecko, use token name as 
+            key and 'coingecko' as value. For example, 
+            {'0xdF574c24545E5FfEcb9a659c229253D4111d87e1':'ethereum',
+             'ethereum':'coingecko'}
+        start : string
+            Start date, for example, '2021-01-01'
+        end : string
+            End date, for example, '2022-01-01'
+        type : string
+            Price type, either 'close' (default) or 'open'. Does NOT support 
+            other values at the moment.
+
+        Returns 
+        -------
+        data frame
+        """
+        start = dt.datetime.strptime(start, '%Y-%m-%d')
+        end   = dt.datetime.strptime(end, '%Y-%m-%d')
+        dates = pd.date_range(start, end)
+
+        if type == 'close':
+            dttms = [date.replace(hour=23, minute=59, second=59) for date in dates] 
+        elif type == 'open':
+            dttms = [date.replace(hour=0, minute=0, second=0) for date in dates] 
+        else: 
+            raise Exception("Only 'open' or 'close' are supported for `type`.")
+
+        # download historical snapshots one by one    
+        df = pd.concat(self.get_tokens_hist_snapshot_prices(token_addrs_n_chains, dttm) for dttm in dttms)
+
+        # clean data so that the resulting frame has 
+        #   - each row is a date
+        #   - each column is a token
+        #   - each value is a price (open or close)
+        df = df.reset_index()
+        if type == 'close':
+            df['date'] = np.where(df.timestamp.dt.hour == 0, 
+                                  df.timestamp.dt.date - relativedelta(days=1), 
+                                  df.timestamp.dt.date)
+        if type == 'open':
+            df['date'] = np.where(df.timestamp.dt.hour == 0, 
+                                  df.timestamp.dt.date, 
+                                  df.timestamp.dt.date + relativedelta(days=1))
+        df = df.groupby(['date', 'symbol'])['price'].mean()
+        df = df.reset_index().pivot(index='date', columns='symbol', values='price')
+        df.columns.name = None
+        return df
+
     def get_closest_block(self, chain, timestamp):
         """Get the closest block to a timestamp.
 
@@ -360,7 +419,7 @@ class DefiLlama:
         Parameters
         ----------
         id : int 
-            Stablecoin ID, you can get these from get_stablecoins_circulating().
+            Stablecoin ID, you can get it from get_stablecoins_circulating().
             For example, USDT has id 1, USDC 2, Frax 6.
         chain : string
             Name of the chain where the stablecoin resides.
@@ -401,4 +460,42 @@ class DefiLlama:
         df = df.reset_index().rename(columns={'index':'stablecoin'})
         df['date'] = df.date.apply(lambda x: dt.datetime.utcfromtimestamp(int(x)))
         df = df.set_index('date')
+        return df
+
+    def get_pools_yields(self):
+        """Get the latest data for all pools, including enriched info such as 
+        predictions.
+
+        Returns 
+        -------
+        data frame
+        """
+        resp = self._get('YIELDS', f'/pools')
+        lst = resp['data']
+        df = pd.json_normalize(lst)
+        df.columns = df.columns.str.replace('predictions.', '', regex=False)
+        df['apyPct30D'] = df.apyPct30D.astype(float)
+        return df
+
+    def get_pool_hist_apy(self, pool_id):
+        """Get historical APY and TVL of a pool.
+
+        Parameters
+        ----------
+        pool_id : str 
+            Pool id, you can get it from the `pool` column after calling 
+            get_pools_yields().
+
+        Returns 
+        -------
+        data frame
+        """
+        resp = self._get('YIELDS', f'/chart/{pool_id}')
+        df = pd.DataFrame(resp['data'])
+        df['date'] = df.timestamp.apply(
+            lambda x: dt.datetime.strptime(x, '%Y-%m-%dT%H:%M:%S.%f%z').date())
+        df = df.drop(columns='timestamp')
+        df['apyReward'] = df.apyReward.astype(float)
+        df['apyBase'] = df.apyBase.astype(float)
+        df = df.groupby('date').mean()
         return df
