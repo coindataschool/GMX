@@ -15,6 +15,7 @@ Dashboards:
 * [Cost of Transactions on GMX, Avalanche](https://dune.com/coindataschool/cost-of-transactions-on-gmx-avalanche)
 * [GLP Strategies Backtest and Comparison](https://coindataschool-glp-strats-comp-dashboard-main-vimp75.streamlitapp.com/)
 * [GLP & TriCrypto Beta and Excess Return](https://coindataschool-beta-sharpe-ret-dashboard-main-5rm56h.streamlitapp.com/)
+* [GMX+GNS Min-Variance Portfolio Construction and Analysis](https://coindataschool-minvar-portfolio-dashbord-main-w2wjqa.streamlit.app/)
 
 Articles:
 
