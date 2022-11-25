@@ -16,6 +16,7 @@ Dashboards:
 * [GLP Strategies Backtest and Comparison](https://coindataschool-glp-strats-comp-dashboard-main-vimp75.streamlitapp.com/)
 * [GLP & TriCrypto Beta and Excess Return](https://coindataschool-beta-sharpe-ret-dashboard-main-5rm56h.streamlitapp.com/)
 * [GMX+GNS Min-Variance Portfolio Construction and Analysis](https://coindataschool-minvar-portfolio-dashbord-main-w2wjqa.streamlit.app/)
+* [Machine Learning Prediction of ROI and Fee APR of UniV3 WETH-GMX positions on Arbitrum](https://coindataschool-univ3-roi-prediction-weth-gmx-main-ponc95.streamlit.app/)
 
 Articles:
 
